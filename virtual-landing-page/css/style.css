@@ -41,7 +41,7 @@ body {
     margin: 0 auto;
 }
 section {
-    padding: 6rem 0;
+    padding: 4rem 0;
 }
 section h2 {
     text-align: center;
@@ -178,7 +178,7 @@ header {
 /*====== categories========*/
 .categories {
     background: var(--color-white);
-    height: 36rem;
+    height: auto;
     
 }
 
@@ -208,13 +208,12 @@ header {
 }
 
 .category {
-    background: var( --color-white);
+    background: var( --color-primary);
     box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.1), 0px 25px 20px -20px rgba(0, 0, 0, 0.2), -25px 0 20px -20px rgba(0, 0, 0, 0.1); 
     padding: 2.5rem;
     border-radius: 2rem;
-    border: 2px solid ;
     border-color: var(--color-bg);
-    transition: var(--transition);  
+    transition: var(--transition);
 }
 
 .category:hover {
@@ -224,25 +223,28 @@ header {
 
 .category h5 {
     margin: 1rem 0 1rem;
-    color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .category p { 
     font-size: 0.85rem;
+    color: var(--color-white);
 }
 
 .category p.event-time {
     font-weight:600;
     margin-top: 8px;
     color: var(--color-bg);
+    color: var(--color-white);
 }
 
 
 
 /* ====== POPULAR COURSES ========= */
 
+
 .courses {
-    margin-top: -8%;
+    margin-top: 1vh;
     background: var(--color-bg2);
 }
 
@@ -254,29 +256,47 @@ header {
 }
 
 .course {
-    background: var(--color-bg1);
+    background: var(--color-white); /* Corrected variable */
     text-align: center;
     border: 1px solid transparent;
+    height: 40rem; /* Fixed height */
+    position: relative; /* Ensure absolute positioning works within this container */
 }
 
 .course:hover {
     background: transparent;
-    border-color: var(--color-primary)
+    border-color: var(--color-primary);
+}
+
+.course__image {
+    flex-shrink: 0;
 }
 
 .course__info {
-    padding: 4rem;  
+    padding: 2rem; /* Adjusted padding */
+    overflow: auto;
+    height: calc(100% - 2rem); /* Adjust height to account for padding */
 }
 
 .course__info p {
-    margin: 2rem 0 2rem;
+    margin: 2rem 0;
     font-size: 0.9rem;
 }
 
-.courses h1{
+.courses h1 {
     text-align: center;
     margin-bottom: 4rem;
 }
+
+/* Ensure button is fixed at the bottom of .course */
+.course .btn-primary {
+    position: absolute;
+    bottom: 1rem; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 4rem); /* Full width minus padding */
+}
+
 
 /*===== FAQs===== */
 .faqs {
@@ -501,7 +521,7 @@ footer ul li a:hover {
 
 /* ===== menu ====== */
     header {
-        height: 70vh;
+        height: 83vh;
         margin-bottom: 8rem;
     }
 
@@ -512,6 +532,7 @@ footer ul li a:hover {
     /* ===== categories ====== */
     .categories {
         height: auto;
+      
     }
 
     .categories__container {
@@ -522,9 +543,17 @@ footer ul li a:hover {
     .categories__left {
         margin-right: 0;
     }
+
+    .categories__right {
+        margin-right: 0;
+        margin-top: -4%;
+    }
+    .btn {
+        display: none;
+    }
     /* ===== popular courses ====== */
     .courses {
-        margin-top: 0;
+        margin-top: 8vh;
     }
 
     .courses__container {
