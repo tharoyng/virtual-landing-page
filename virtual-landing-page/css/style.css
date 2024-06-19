@@ -47,7 +47,7 @@ section {
 }
 section h2 {
     text-align: center;
-    margin-bottom: 4rem;
+   
 }
 
 h1, h2, h3, h4, h5 {
@@ -146,7 +146,7 @@ nav button {
     transition: var(--transition);
 }
 .nav__menu a:hover {
-    color: var(--color-bg2)
+    color: var(--color-primary)
 }
 /* ===== header ==== */
 header {
@@ -165,15 +165,14 @@ header {
     max-width: 50%;
 }
 
-.header__left h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+.header__left h2 {
+    width: max-content;
+
     color: var(--color-black);
 }
 
 .header__left p {
-    margin-bottom: 1.5rem;
+    margin-block: 2em;
     color: var(--color-black);
 }
 
@@ -272,8 +271,9 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 10px;
+    margin: 3rem 2rem;
     justify-content: center;
+    
 }
 
 .course {
@@ -337,7 +337,7 @@ header {
     display: flex;
     align-items: center;
     gap: 1.4rem;
-    height: fit-content;
+    height: auto;
     background: var(--color-primary);
     cursor: pointer;
 }
@@ -397,7 +397,10 @@ header {
     background: var(--color-primary);
     padding: 2rem;
     margin-top: 3rem;
-    position: relative;
+    position: relative;  
+}
+.testimonial_body p{
+    color: white;
 }
 
 .testimonial_body::before {
