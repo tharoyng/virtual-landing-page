@@ -38,7 +38,9 @@ body {
 
 .container {
     width: var(--container-width-lg);
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto; /* Center container */
+    padding: 0 1rem; /* Add padding to avoid content touching the edges */
 }
 section {
     padding: 4rem 0;
@@ -113,7 +115,7 @@ nav {
     position: fixed;
     background: white;
     top: 0;
-    z-index: 11;
+    z-index: 8;
 }
 /* change navbar styles on scroll using javascript*/
 .window-scroll {
@@ -137,7 +139,6 @@ nav button {
     display: flex;
     align-items: center;
     gap: 4rem;
-    margin-right: 5%;
 }
 
 .nav__menu a {
@@ -149,37 +150,55 @@ nav button {
 }
 /* ===== header ==== */
 header {
-    position: relative;
-    top: 5rem;
-    overflow: auto;
-    min-height: 70vh; 
-    margin-bottom: 5rem;
     background: var(--color-bg2);
+    padding-top: 8rem; /* Add padding to accommodate the height of the nav */
 }
 
 .header__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100%;
-    gap: 5rem;
-    
+
 }
 
-.header__left, .header__right {
-    flex: 1;
-    min-width: 300px; /* Ensure elements shrink appropriately on smaller screens */
+.header__left {
+    max-width: 50%;
 }
 
+.header__left h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+}
 
-.header__left p { 
-    margin: 1rem 0 2.4rem;
+.header__left p {
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
+}
+
+.header__right {
+    max-width: 50%;
+    text-align: right;
+}
+
+.header__right__image {
+    height: 100%; /* Make sure the container takes up full height */
+    display: flex;
+    align-items: center; /* Center image vertically */
+    justify-content: center; /* Center image horizontally */
+}
+
+.header__right__image img {
+    max-width: 100%;
+    max-height: 100%; /* Ensure image covers full height without distortion */
+    object-fit: cover;
 }
 /*====== categories========*/
 .categories {
     background: var(--color-white);
-    height: auto;
-    
+    padding: 2rem 1rem; /* Add padding for spacing */
+    margin: 3rem auto; /* Adjusted margin to match .container */
 }
 
 .categories h2 {
@@ -191,8 +210,8 @@ header {
 .categories__container {
     display: grid;
     grid-template-columns: 40% 60%;
-    gap: 4rem;
-    margin-left: 12%;;
+    gap: 1rem;
+    max-width: 1200px; /* Max width for consistency */
    
 }
 
@@ -203,15 +222,15 @@ header {
 .categories__right {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    margin-right: 16%;
+    gap: 1rem;
+    
 }
 
 .category {
     background: var( --color-primary);
     box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.1), 0px 25px 20px -20px rgba(0, 0, 0, 0.2), -25px 0 20px -20px rgba(0, 0, 0, 0.1); 
-    padding: 2.5rem;
-    border-radius: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
     border-color: var(--color-bg);
     transition: var(--transition);
 }
@@ -246,6 +265,7 @@ header {
 .courses {
     margin-top: 1vh;
     background: var(--color-bg2);
+   
 }
 
 .courses__container {
@@ -253,6 +273,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 10px;
+    justify-content: center;
 }
 
 .course {
@@ -260,7 +281,8 @@ header {
     text-align: center;
     border: 1px solid transparent;
     height: 40rem; /* Fixed height */
-    position: relative; /* Ensure absolute positioning works within this container */
+    position: relative;
+    margin: auto;  /* Ensure absolute positioning works within this container */
 }
 
 .course:hover {
@@ -300,8 +322,8 @@ header {
 
 /*===== FAQs===== */
 .faqs {
-    background: var(--color-bg1);
-    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+    background: var(--color-white);
+    box-shadow:  0 0 3rem rgba(0, 0, 0, 0.1);
 }
 
 .faqs_container {
@@ -330,10 +352,17 @@ header {
     font-size: 1.2rem;
 }
 
-.faq p {
+.question_answer p {
     margin-top: 0.2rem;
-    display: none
+    display: none;
 }
+.question_answer h4,
+.question_answer p,
+.faq__icon .uil-angle-up,
+.faq__icon .uil-angle-down{
+    color: white;
+}
+
 
 .faq.open p {
     display: block; 
@@ -344,7 +373,8 @@ header {
 .testimonials_container {
     overflow-x: hidden;
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
 }
 .testimonial {
     padding-top: 2rem;
@@ -386,7 +416,7 @@ header {
 
 /*====== FOOTER===*/
 footer {
-    background: var(--color-bg1);
+    background: var(--color-bg2);
     padding-top: 5rem;
     font-size: 0.9rem;
 }
@@ -434,27 +464,29 @@ footer ul li a:hover {
         width: var(--container-width-md);
     }
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     h2 {
-        font-size: 1.7rem;
+        font-size: 2rem;
     }
 
     h3 {
-        font-size: 1.4rem;
+        font-size: 1.4em;
     }
 
     h4 {
-        font-size: 1.2rem;
+        font-size: 1.2em;
     }
-
+    p {
+        font-size: 14px;
+    }
     /* ====== NAVBAR ======*/
   nav button {
         display: inline-block;
         background: transparent;
         font-size: 1.8rem;
-        color: var(--color-white);
+        color: var(--color-primary);
         cursor: pointer;
     }
 
@@ -464,10 +496,10 @@ footer ul li a:hover {
 
    .nav__menu {
         position: fixed;
-        top: 5rem;
+        top: 5em;
         right: 5%;
         height: fit-content;
-        width: 18rem;
+        width: 18em;
         flex-direction: column;
         gap: 0;
         display: none;
@@ -520,15 +552,23 @@ footer ul li a:hover {
 
 
 /* ===== menu ====== */
-    header {
-        height: 83vh;
-        margin-bottom: 8rem;
+  
+     .header__left, .header__right {
+        max-width: 100%;
+    }
+    .header__container {
+        flex-direction: column;
+        text-align: left;
+       
+    }
+    .header__right__image img {
+        margin-top: 2rem;
+    } 
+    .header__left p {
+        margin-bottom: 1.3rem;
+        text-align: left;
     }
 
-    .header__container {
-        gap: 0;
-        padding-bottom: 200px;
-    }
     /* ===== categories ====== */
     .categories {
         height: auto;
@@ -545,12 +585,11 @@ footer ul li a:hover {
     }
 
     .categories__right {
-        margin-right: 0;
-        margin-top: -4%;
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+     
     }
-    .btn {
-        display: none;
-    }
+  
     /* ===== popular courses ====== */
     .courses {
         margin-top: 8vh;
@@ -594,19 +633,13 @@ footer ul li a:hover {
     }
     .header__left p {
         margin-bottom: 1.3rem;
+        text-align: left;
     }
 /* ====== categories =====*/
 .categories__right {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0.7rem;
 }
-
-/* .categories__left p {
-    margin-bottom: 20px;
-}
-.categories__left h2 {
-    margin-bottom: 1rem;
-} */
 
 .category {
     padding: 1rem;
@@ -622,7 +655,13 @@ footer ul li a:hover {
 
 .courses__container {
     grid-template-columns: 1fr;
+    justify-items: center; 
 }
+
+.course {
+    grid-template-columns: 1fr;
+}
+
 
 /* ====== TESTIMONIALS =====*/
 .testimonial_body {
