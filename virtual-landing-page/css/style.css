@@ -271,7 +271,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin: 3rem 2rem;
+    margin: 2rem auto 1rem;
     justify-content: center;
     
 }
@@ -329,7 +329,8 @@ header {
 .faqs_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem
+    gap: 1rem;
+    margin: 2rem auto 1rem;
 }
 
 .faq {
@@ -337,7 +338,7 @@ header {
     display: flex;
     align-items: center;
     gap: 1.4rem;
-    height: auto;
+    height: fit-content;
     background: var(--color-primary);
     cursor: pointer;
 }
@@ -373,8 +374,7 @@ header {
 .testimonials_container {
     overflow-x: hidden;
     position: relative;
-    margin-bottom: 4rem;
-    margin-top: 4rem;
+    margin: 2rem auto 2rem;
 }
 .testimonial {
     padding-top: 2rem;

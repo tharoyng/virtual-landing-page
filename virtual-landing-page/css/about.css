@@ -14,7 +14,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem
 
-
+}
 .about__achievement_right > p {
     margin: 2rem 0 2rem 0;
 }
