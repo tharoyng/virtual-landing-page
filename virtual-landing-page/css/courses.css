@@ -1,3 +1,7 @@
-.courses {
-    margin-top: 10px;
+
+.greeting__container {
+    margin: 8rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
