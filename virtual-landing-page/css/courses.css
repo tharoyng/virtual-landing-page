@@ -1,7 +1,30 @@
 
 .greeting__container {
     margin: 8rem auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
+}
+
+.greeting {
+    align-self: center;
+    display: grid;
+    height: 10rem;
+}
+.QR_code {
+    height: 16rem;
+    width: 16rem;
+    border: 2rem solid #fff;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+    align-content: center;
+    gap: 4rem;
+    
+}
+
+.btn_container{
+    padding: 0.5rem 2rem;
+    align-self: center;
+    
 }
