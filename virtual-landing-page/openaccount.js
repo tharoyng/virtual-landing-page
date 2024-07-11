@@ -14,3 +14,7 @@ function updateGreeting() {
   }
 
   window.onload = updateGreeting;
+
+
+
+/*end of greeting*/ 
